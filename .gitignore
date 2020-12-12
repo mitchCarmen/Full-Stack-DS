@@ -1,4 +1,3 @@
 .DS_Store
-.ipynb_checkpoints
 data/*
 Week_2/custom_RF_flights.sav
