@@ -14,6 +14,5 @@ def feat_eng_datetime(df):
     df['Hour'] = pd.to_datetime(df['DepTime'], format='%H:%M').dt.hour.astype('category')
     df['Minutes'] = pd.to_datetime(df['DepTime'], format='%H:%M').dt.minute.astype('category')
     df['DepTime'] = pd.to_datetime(df['DepTime'], format='%H:%M').dt.time
-    df = df.drop(columns=['FlightDate','DepTime'])
     
     return df

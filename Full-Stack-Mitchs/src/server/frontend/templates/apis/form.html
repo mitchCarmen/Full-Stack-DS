@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+    {% block body %}
+
+<center>
+        <h4 class= "container">
+                <b>Fill out the form and get our prediction!</b>
+                <br/><br/>  
+        </h4>
+</center>
+
+{% from "includes/_formhelpers.html" import render_selection_field, render_field %}
+<form method="post">
+
+<div class="row">
+    {{ render_field(form.FlightDate) }}
+    {{ render_field(form.DepTime) }}
+    {{ render_field(form.UniqueCarrier) }}
+    
+</div>
+
+<div class="row">
+    {{ render_field(form.Origin) }}
+    {{ render_field(form.Dest) }}
+    {{ render_field(form.Distance) }}
+</div>
+
+<br/>
+<br/>
+<center><button class="btn btn-secondary">Submit</button></center>
+  {% if pred is defined %}
+      <b>Prediction:</b> {{pred}}
+  {% endif %}
+    </form>
+</br>
+    {%endblock%}
